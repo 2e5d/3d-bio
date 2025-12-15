@@ -30,6 +30,7 @@ const cfg = {
         bio: "This is an example bio that will have a typing effect.",
         showDot: true,
         showGlow: true,
+        uid: "UID 0", // Added UID for tooltip
         badges: [
             {
                 name: "Premium",
@@ -67,23 +68,6 @@ const cfg = {
                 color: "#ffffff",
                 viewBox: "4 3.41 16 17.59"
             }
-
-
-           /* other guns.lol badges
-            {
-                name: "badge9",
-                svg: `<path fill="currentColor" d="m2.45 10.575l4.2-4.2q.35-.35.825-.5t.975-.05l1.3.275Q8.4 7.7 7.625 9t-1.5 3.15zm5.125 2.275q.575-1.8 1.563-3.4t2.387-3q2.2-2.2 5.025-3.287t5.275-.663q.425 2.45-.65 5.275T17.9 12.8q-1.375 1.375-3 2.388t-3.425 1.587zm6.9-3q.575.575 1.413.575T17.3 9.85t.575-1.412t-.575-1.413t-1.412-.575t-1.413.575t-.575 1.413t.575 1.412m-.7 12.025l-1.6-3.675q1.85-.725 3.163-1.5t2.912-2.125l.25 1.3q.1.5-.05.988t-.5.837zM4.05 16.05q.875-.875 2.125-.888t2.125.863t.875 2.125t-.875 2.125q-.625.625-2.087 1.075t-4.038.8q.35-2.575.8-4.025T4.05 16.05"></path>`,
-                color: "#ffffff",
-                viewBox: "2.18 2.38 19.77 19.77"
-            }
-            {
-                name: "badge10",
-                svg: `<path fill="currentColor" d="M17.66 11.2c-.23-.3-.51-.56-.77-.82c-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32c-2.59 2.08-3.61 5.75-2.39 8.9c.04.1.08.2.08.33c0 .22-.15.42-.35.5c-.23.1-.47.04-.66-.12a.58.58 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5c.14.6.41 1.2.71 1.73c1.08 1.73 2.95 2.97 4.96 3.22c2.14.27 4.43-.12 6.07-1.6c1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6c-1.12.4-2.24-.16-2.9-.82c1.19-.28 1.9-1.16 2.11-2.05c.17-.8-.15-1.46-.28-2.23c-.12-.74-.1-1.37.17-2.06c.19.38.39.76.63 1.06c.77 1 1.98 1.44 2.24 2.8c.04.14.06.28.06.43c.03.82-.33 1.72-.93 2.27Z"></path>`,
-                color: "#ffffff",
-                viewBox: "4.99 3 14 18"
-            }
-           */
-
         ]
     },
     soc: {
@@ -124,7 +108,9 @@ const cfg = {
     vc: {
         on: true,
         init: 0,
-        auto: true
+        auto: true,
+        realTime: true,
+        growthRate: 1.05
     },
     mp: {
         on: true,
@@ -178,9 +164,18 @@ const icons = {
     spotify: `<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.36.18.54.78.24 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.26-1.26 11.28-1.02 15.721 1.621.54.3.72 1.02.42 1.56-.299.42-1.02.6-1.56.3z"/>`,
     github: `<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>`,
     x: `<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>`,
-    telegram: `<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.697.064-1.225-.461-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.150-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>`,
+    telegram: `<path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.697.064-1.225-.461-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.150-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.440-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>`,
     instagram: `<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>`,
     youtube: `<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>`
+};
+
+const tooltipNames = {
+    spotify: "Spotify",
+    github: "GitHub",
+    x: "X (Twitter)",
+    telegram: "Telegram",
+    instagram: "Instagram",
+    youtube: "YouTube"
 };
 
 let ti = 0;
@@ -193,6 +188,7 @@ let aud = null;
 let tiInt = null;
 let bioInt = null;
 let currentDuration = 0;
+let viewInterval = null;
 
 function startTitle() {
     let t = cfg.prof.name || "Profile";
@@ -283,7 +279,10 @@ function applyCfg() {
             pfp.src = cfg.prof.pfpUrl;
         }
         
-        document.getElementById('name').textContent = cfg.prof.name;
+        const nameElement = document.getElementById('name');
+        nameElement.textContent = cfg.prof.name;
+        nameElement.title = cfg.prof.uid || "UID 0";
+        
         document.getElementById('loc').textContent = cfg.prof.loc;
         
         const dot = document.querySelector('.dot');
@@ -301,12 +300,15 @@ function applyCfg() {
             cfg.prof.badges.forEach(badge => {
                 const span = document.createElement('span');
                 span.className = 'badge';
+                span.title = badge.name;
+                
                 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 svg.setAttribute('class', `badge-${badge.name}`);
                 svg.setAttribute('width', '1em');
                 svg.setAttribute('height', '1em');
                 svg.setAttribute('viewBox', badge.viewBox);
                 svg.innerHTML = badge.svg.replace(/fill="[^"]*"/g, 'fill="#ffffff"');
+                
                 span.appendChild(svg);
                 badges.appendChild(span);
             });
@@ -332,6 +334,7 @@ function applyCfg() {
                 a.href = link.url;
                 a.target = '_blank';
                 a.className = 'link';
+                a.title = tooltipNames[link.n] || link.n;
                 
                 const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 svg.setAttribute('class', 'icon');
@@ -357,6 +360,8 @@ function applyCfg() {
     if (!cfg.mp.on) {
         document.getElementById('player').classList.add('hidden');
     }
+    
+    // Tooltips removed for location and views as requested
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -398,22 +403,111 @@ document.addEventListener('keydown', (e) => {
 });
 
 function startV() {
-    let vc = cfg.vc.init || 0;
+    let vc = cfg.vc.init || 1250;
     const vce = document.getElementById('viewCount');
+    const now = new Date();
+    const today = now.toDateString();
     
-    if (localStorage.getItem('profileViews')) {
-        vc = parseInt(localStorage.getItem('profileViews'));
-        vce.textContent = vc.toLocaleString();
+    let viewData = localStorage.getItem('profileViewData');
+    if (viewData) {
+        viewData = JSON.parse(viewData);
+        vc = viewData.total || vc;
+        
+        if (cfg.vc.realTime && viewData.lastUpdate) {
+            const lastUpdate = new Date(viewData.lastUpdate);
+            const daysSince = Math.floor((now - lastUpdate) / (1000 * 60 * 60 * 24));
+            
+            if (daysSince > 0) {
+                const growthRate = cfg.vc.growthRate || 1.05;
+                const dailyIncrement = Math.floor(vc * 0.01);
+                
+                for (let i = 0; i < daysSince; i++) {
+                    vc += dailyIncrement + Math.floor(Math.random() * 50);
+                }
+            }
+        }
+    } else {
+        viewData = {
+            total: vc,
+            daily: {},
+            lastUpdate: now.toISOString()
+        };
     }
     
+    if (!viewData.daily[today]) {
+        vc += 1 + Math.floor(Math.random() * 10);
+        viewData.daily[today] = 1;
+    } else {
+        viewData.daily[today] += Math.floor(Math.random() * 3);
+        vc += Math.floor(Math.random() * 3);
+    }
+    
+    viewData.total = vc;
+    viewData.lastUpdate = now.toISOString();
+    localStorage.setItem('profileViewData', JSON.stringify(viewData));
+    
+    updateViewCount(vce, vc);
+    
     if (cfg.vc.auto) {
-        setInterval(() => {
-            if (Math.random() > 0.7) {
-                vc++;
-                vce.textContent = vc.toLocaleString();
-                localStorage.setItem('profileViews', vc);
+        if (viewInterval) clearInterval(viewInterval);
+        
+        viewInterval = setInterval(() => {
+            const chance = Math.random();
+            
+            if (chance < 0.3) {
+                const increment = Math.floor(Math.random() * 5) + 1;
+                vc += increment;
+                viewData.total = vc;
+                viewData.daily[today] = (viewData.daily[today] || 0) + increment;
+                viewData.lastUpdate = new Date().toISOString();
+                
+                localStorage.setItem('profileViewData', JSON.stringify(viewData));
+                updateViewCount(vce, vc);
+                
+                if (increment > 1) {
+                    vce.style.color = '#4CAF50';
+                    setTimeout(() => {
+                        vce.style.color = '#ddd';
+                    }, 500);
+                }
             }
-        }, Math.random() * 10000 + 5000);
+            
+            const hour = now.getHours();
+            if ((hour >= 14 && hour <= 18) || (hour >= 20 && hour <= 23)) {
+                if (Math.random() < 0.4) {
+                    const peakIncrement = Math.floor(Math.random() * 3) + 1;
+                    vc += peakIncrement;
+                    viewData.total = vc;
+                    viewData.daily[today] = (viewData.daily[today] || 0) + peakIncrement;
+                    localStorage.setItem('profileViewData', JSON.stringify(viewData));
+                    updateViewCount(vce, vc);
+                }
+            }
+        }, Math.random() * 15000 + 10000);
+    }
+}
+
+function updateViewCount(element, count) {
+    const current = parseInt(element.textContent.replace(/,/g, '')) || 0;
+    const diff = count - current;
+    
+    if (diff > 0) {
+        let start = current;
+        const duration = 1000;
+        const increment = diff / (duration / 16);
+        
+        function animate() {
+            start += increment;
+            if (start >= count) {
+                element.textContent = count.toLocaleString();
+                return;
+            }
+            element.textContent = Math.floor(start).toLocaleString();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    } else {
+        element.textContent = count.toLocaleString();
     }
 }
 
@@ -690,4 +784,11 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
         return false;
     }
+});
+
+window.addEventListener('beforeunload', () => {
+    if (tiInt) clearInterval(tiInt);
+    if (bioInt) clearInterval(bioInt);
+    if (viewInterval) clearInterval(viewInterval);
+    if (pi) clearInterval(pi);
 });

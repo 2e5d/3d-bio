@@ -2,7 +2,7 @@ const ol = document.getElementById('overlay');
 const body = document.body;
 const c3d = document.getElementById('c3d');
 const mc = document.getElementById('mainCard');
-const pc = document.getElementById('player');
+const pc = document.getElementById('player'); 
 const pfp = document.getElementById('pfp');
 
 const playBtn = document.getElementById('playBtn');

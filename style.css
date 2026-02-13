@@ -1,7 +1,7 @@
 
 
 
-/*Change this if you want normal colors, do ctrl+F type colors on top then on bottom do this rgba(81, 81, 81);  */
+/*Change this if you want normal colors, do ctrl+F type colors on top then on bottom do this rgba(255, 255, 255);  */
 * {
     margin: 0;
     padding: 0;
@@ -173,7 +173,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     height: auto; 
     min-height: 292px;    
     max-height: 300px;    
-    border: 10px medium rgba(81, 81, 81);
+    border: 10px medium rgba(255, 255, 255);
     position: relative;
     transform-style: preserve-3d;
     will-change: transform;
@@ -232,8 +232,8 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .pfp {
-    width: 120%;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     animation: whiteGlow 3s ease-in-out infinite alternate;
     object-fit: cover;
 }
@@ -265,7 +265,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .name {
-    color: rgba(64, 64, 64, 1);
+    color: rgba(255, 255, 255);
     font-size: 28px;
     font-weight: bold;
     animation: whiteGlow 3s ease-in-out infinite alternate;
@@ -275,23 +275,23 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 
 @keyframes whiteGlow {
     0% {
-        text-shadow: 0 0 2px rgba(64, 64, 64, 0.8), 0 0 4px rgba(64, 64, 64, 0.6);
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);
     }
 
     100% {
-        text-shadow: 0 0 3px rgba(64, 64, 64, 0.9), 0 0 6px rgba(64, 64, 64, 0.7);
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 255, 255, 0.7);
     }
 }
 
 .badges-container {
     display: flex;
     align-items: center;
-    background: rgba(64, 64, 64, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 18px;
     padding: 5px 10px;
     margin-left: 10px;
-    border: 1px solid rgba(64, 64, 64, 0.4);
-    box-shadow: 0 0 8px rgba(64, 64, 64, 0.3), inset 0 1px 0 rgba(64, 64, 64, 0.1);
+    border: 1px solid rgba(63, 64, 67, 0.4);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
     position: relative;
     backdrop-filter: blur(5px);
     overflow: visible !important;
@@ -301,19 +301,21 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     display: flex;
     align-items: center;
     gap: 5px;
+    color: rgba(255, 255, 255);
     overflow: visible !important;
 }
 
 .badge {
     position: relative;
+    color: rgba(255, 255, 255);
     overflow: visible !important;
 }
 
     .badge svg {
         width: 16px;
         height: 16px;
-        fill: rgba(64, 64, 64);
-        filter: drop-shadow(0 0 2px rgba(64, 64, 64, 0.7)) drop-shadow(0 0 4px rgba(64, 64, 64, 0.5)) drop-shadow(0 0 8px rgba(64, 64, 64, 0.3)) !important;
+        fill: rgba(255, 255, 255);
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)) !important;
         position: relative;
         z-index: 2;
         animation: badgeGlow 3s ease-in-out infinite alternate;
@@ -321,16 +323,16 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 
 @keyframes badgeGlow {
     0% {
-        filter: drop-shadow(0 0 1px rgba(64, 64, 64, 0.6)) drop-shadow(0 0 3px rgba(64, 64, 64, 0.5)) drop-shadow(0 0 6px rgba(64, 64, 64, 0.2)) !important;
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.2)) !important;
     }
 
     100% {
-        filter: drop-shadow(0 0 3px rgba(64, 64, 64, 0.8)) drop-shadow(0 0 6px rgba(64, 64, 64, 0.6)) drop-shadow(0 0 10px rgba(64, 64, 64, 0.4)) !important;
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4)) !important;
     }
 }
 
 .desc {
-    color: rgba(64, 64, 64, 1);
+    color: rgba(255, 255, 255);
     font-size: 16px;
     line-height: 1.4;
     font-style: italic;
@@ -423,7 +425,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     background: rgba(25, 25, 25, 0.5) !important;
     border-radius: 10px;
     padding: 10px 12px !important;
-    border: 4px medium rgba(81, 81, 81);
+    border: 4px medium rgba(255, 255, 255);
     backdrop-filter: blur(4px) !important;
     width: 340px !important;
     height: 85px !important;
@@ -433,7 +435,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     align-items: center;
     overflow: visible !important;
     margin: 0 !important;
-    color: rgba(64, 64, 64, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
 
 }
 
@@ -502,19 +504,19 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .discord-username {
-    color: rgba(64, 64, 64, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow: 0 0 3px rgba(64, 64, 64, 0.9), 0 0 5px rgba(64, 64, 64, 0.7);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 0 5px rgba(255, 255, 255, 0.7);
     font-family: 'Montserrat', sans-serif;
 }
 
 .discord-activity-line {
-    color: rgba(64, 64, 64, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
     font-size: 13px !important;
     display: flex;
     align-items: center;
@@ -526,7 +528,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     max-width: 240px;
     min-width: 0;
     width: 100%;
-    text-shadow: 0 0 3px rgba(64, 64, 64, 0.9), 0 0 5px rgba(64, 64, 64, 0.7);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 0 5px rgba(255, 255, 255, 0.7);
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -558,11 +560,11 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 .activity-text {
     flex-shrink: 0;
     white-space: nowrap;
-    color: rgba(64, 64, 64, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
 }
 
 .activity-time {
-    color: rgba(64, 64, 64, 0.7) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     font-size: 11px;
     flex-shrink: 0;
     margin-left: 4px;
@@ -608,7 +610,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .spotify-playlist-name {
-    color: rgba(64, 64, 64, 1) !important;
+    color: rgba(255, 255, 255, 1) !important;
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.3px;
@@ -621,7 +623,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .spotify-playlist-artist {
-    color: rgba(64, 64, 64, 0.9) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     font-size: 13px !important;
     font-weight: 500;
     white-space: nowrap;
@@ -641,14 +643,14 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .spotify-saves, .spotify-songs, .spotify-duration {
-    color: rgba(64, 64, 64, 0.7) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     font-size: 10px;
     font-weight: 500;
     white-space: nowrap;
 }
 
 .spotify-separator {
-    color: rgba(64, 64, 64, 0.5) !important;
+    color: rgba(255, 255, 255, 0.5) !important;
     font-size: 8px;
     margin: 0 1px;
 }
@@ -682,7 +684,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .link {
-    color: rgba(64, 64, 64, 1);
+    color: rgba(255, 255, 255);
     text-decoration: none;
     display: inline-block;
     transition: transform 0.3s;
@@ -694,13 +696,13 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 .icon {
     width: 42px;
     height: 42px;
-    fill: rgba(64, 64, 64, 1);
+    fill: rgba(255, 255, 255);
     transition: transform 0.4s, filter 0.4s;
     opacity: 0;
     transform: translateY(-30px);
     position: relative;
     z-index: 2;
-    filter: drop-shadow(0 0 3px rgba(64, 64, 64, 0.7)) drop-shadow(0 0 6px rgba(64, 64, 64, 0.5));
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
     overflow: visible !important;
 }
 
@@ -722,7 +724,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 
     .icon-img:hover {
         transform: scale(1.3) rotate(5deg);
-        filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(64, 64, 64, 0.4)) drop-shadow(0 0 12px rgba(64, 64, 64, 0.7));
+        filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
     }
 
 .overlay-hidden .icon-img {
@@ -746,62 +748,62 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 
 @keyframes locViewsGlow {
     0% {
-        text-shadow: 0 0 2px rgba(64, 64, 64, 0.8), 0 0 4px rgba(64, 64, 64, 0.6);
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);
     }
 
     100% {
-        text-shadow: 0 0 3px rgba(64, 64, 64, 0.9), 0 0 6px rgba(64, 64, 64, 0.7);
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 255, 255, 0.7);
     }
 }
 
 .loc-bottom, .views-bottom {
     display: flex;
     align-items: center;
-    color: rgba(64, 64, 64, 1);
+    color: rgba(255, 255, 255);
     font-size: 18px;
     gap: 7px;
-    text-shadow: 0 0 3px rgba(64, 64, 64, 0.9), 0 0 5px rgba(64, 64, 64, 0.7);
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 0 5px rgba(255, 255, 255, 0.7);
     overflow: visible !important;
 }
 
     .loc-bottom .loc-icon, .views-bottom .view-icon {
         width: 18px;
         height: 18px;
-        fill: rgba(64, 64, 64, 1);
-        filter: drop-shadow(0 0 2px rgba(64, 64, 64, 0.8)) drop-shadow(0 0 4px rgba(64, 64, 64, 0.6));
+        fill: rgba(255, 255, 255);
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
         animation: iconGlow 3s ease-in-out infinite alternate;
     }
 
 @keyframes iconGlow {
     0% {
-        filter: drop-shadow(0 0 1px rgba(64, 64, 64, 0.7)) drop-shadow(0 0 3px rgba(64, 64, 64, 0.5));
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.5));
         opacity: 0.9;
     }
 
     100% {
-        filter: drop-shadow(0 0 3px rgba(64, 64, 64, 0.9)) drop-shadow(0 0 6px rgba(64, 64, 64, 0.7));
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
         opacity: 1;
     }
 }
 
 .separator {
-    color: rgba(64, 64, 64, 1);
+    color: rgba(255, 255, 255);
     font-size: 18px;
     font-weight: 300;
     opacity: 0.7;
-    text-shadow: 0 0 2px rgba(64, 64, 64, 0.8), 0 0 4px rgba(64, 64, 64, 0.6);
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);
     animation: separatorGlow 3s ease-in-out infinite alternate;
 }
 
 @keyframes separatorGlow {
     0% {
         opacity: 0.5;
-        text-shadow: 0 0 1px rgba(64, 64, 64, 0.7), 0 0 2px rgba(64, 64, 64, 0.5);
+        text-shadow: 0 0 1px rgba(255, 255, 255, 0.7), 0 0 2px rgba(255, 255, 255, 0.5);
     }
 
     100% {
         opacity: 0.8;
-        text-shadow: 0 0 2px rgba(64, 64, 64, 0.8), 0 0 4px rgba(64, 64, 64, 0.6);
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.6);
     }
 }
 
@@ -809,7 +811,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     width: 730px;
     height: 85px;
     background: rgba(25, 25, 25, 0.5);
-    border: 4px medium rgba(81, 81, 81);
+    border: 4px medium rgba(255, 255, 255);
     border-radius: 12px;
     padding: 10px 25px;
     color: #ddd;

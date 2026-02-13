@@ -29,7 +29,7 @@ const config = {
     general: {
         title: "Template",
         backgroundColor: "rgba(0, 0, 0, 0.95)",
-        backgroundVideo: "https://y2kmoney.pages.dev/img/graybg.mp4",
+        backgroundVideo: "https://files.catbox.moe/vlegux.png",
         titleEffect: false, // Added for title effect toggle
         backgroundMusic: {  // Add this section
             enabled: true,
@@ -41,8 +41,8 @@ const config = {
     },
     profile: {
         enabled: true, // lol idk why i add this 
-        pictureUrl: "https://r2.guns.lol/c8fff898-599f-4c26-9b0e-ce14ad91d7c5.webp",
-        name: "@2e5d",
+        pictureUrl: "https://files.catbox.moe/f7zt5w.png",
+        name: "@User",
         location: "", // this is the location i remove it 
         bio: "-1", // dont change
         bios: [
@@ -142,9 +142,9 @@ const config = {
     },
    viewCounter: {
         enabled: true,
-        initialCount: 0, // this is for the fake veiwcounter
+        initialCount: 213, // this is for the fake veiwcounter
         jsonBlob: {
-            enabled: true, // this is for REAL Veiwcounter turn off for fake one
+            enabled: false, // this is for REAL Veiwcounter turn off for fake one
             apiUrl: "https://api.jsonblob.com/api/jsonBlob/", // dont change
             blobId: "" // change this 
         }

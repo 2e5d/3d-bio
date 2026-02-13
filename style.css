@@ -166,7 +166,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
 }
 
 .card {
-    background: rgba(25, 25, 25, 0.4);
+    background: rgba(25, 25, 25, 1);
     padding: 30px 40px;
     border-radius: 5px;
     width: 700px;
@@ -209,7 +209,7 @@ a, button, .ctrl, .link, .spotify-widget, .discord-presence {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
-    margin-top: 27px; /* Added this to push pfp/name/badges down further */
+    margin-top: 27px; /* t+his is to push pfp/name/badges down further */
     gap: 15px;
     opacity: 0;
     transform: translateY(-30px);
